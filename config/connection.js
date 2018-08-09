@@ -13,17 +13,16 @@ const connection = mysql.createConnection({
 });
 
 
-app.listen(PORT, function() {
-    // Log (server-side) when our server has started
-    console.log("Server listening on: http://localhost:" + PORT);
-  });
-  
+app.listen(PORT, function () {
+  // Log (server-side) when our server has started
+  console.log("Server listening on: http://localhost:" + PORT);
+});
+
 //make mysql connection
-connection.connect(function(err){
-  if(err){
-  console.error('ERROR: MYSQL connection error -- '+ err.stack+ '/n/n');
-  });
-  
-  //export
-  module.exports = connection;
-    
+connection.connect(function (err) {
+  if (err) {
+    console.error('ERROR: MYSQL connection error -- ' + err.stack + '/n/n');
+  }
+});
+//export
+module.exports = connection;
