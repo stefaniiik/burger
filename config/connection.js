@@ -18,3 +18,12 @@ app.listen(PORT, function() {
     console.log("Server listening on: http://localhost:" + PORT);
   });
   
+//make mysql connection
+connection.connect(function(err){
+  if(err){
+  console.error('ERROR: MYSQL connection error -- '+ err.stack+ '/n/n');
+  });
+  
+  //export
+  module.exports = connection;
+    
