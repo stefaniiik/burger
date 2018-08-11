@@ -8,21 +8,18 @@ const PORT = process.env.PORT || 8080;
 const connection = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: "",
-  database: "wizard_schools_db"
+  password: "root",
+  database: "burgers_db"
 });
 
-
-app.listen(PORT, function () {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
-});
 
 //make mysql connection
 connection.connect(function (err) {
   if (err) {
     console.error('ERROR: MYSQL connection error -- ' + err.stack + '/n/n');
+  return;
   }
+  console.log('connected as id' + connection.threadId);
 });
 //export
 module.exports = connection;

@@ -2,9 +2,9 @@ CREATE DATABASE burgers_db
 
 USE burgers_db;
 
-CREATE TABLE burgers;
+DROP TABLE IF EXISTS burgers;
 
-INSERT INTO burgers (
+CREATE TABLE burgers (
     id integer(11) auto_increment,
     burger_name varchar(25) not null,
     devoured boolean,
